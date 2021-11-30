@@ -90,6 +90,9 @@ def _main_(argv):
 
     with open(config_path) as config_buffer:
         config = json.loads(config_buffer.read())
+    
+    ##SS
+    print(config['train']['train_annot_folder'])
 
     train_imgs, train_labels = parse_voc_annotation(
         config['train']['train_annot_folder'],
@@ -97,6 +100,9 @@ def _main_(argv):
         config['train']['cache_name'],
         config['model']['labels']
     )
+    ##SS
+    print(len(train_imgs))
+
 
     # run k_mean to find the anchors
     annotation_dims = []

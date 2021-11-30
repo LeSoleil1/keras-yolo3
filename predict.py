@@ -31,6 +31,8 @@ def _main_(args):
     ###############################
     os.environ['CUDA_VISIBLE_DEVICES'] = config['train']['gpus']
     infer_model = load_model(config['train']['saved_weights_name'])
+    # SS
+    # infer_model = load_model(config['train']['saved_weights_name'], compile=False)
 
     ###############################
     #   Predict bounding boxes 

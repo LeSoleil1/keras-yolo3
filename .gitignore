@@ -1,4 +1,10 @@
 *.jpg
 *.jpeg
+*.PNG
 *.weights
 *.h5
+*.zip
+*.mp4
+*.xml
+
+

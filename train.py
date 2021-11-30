@@ -10,6 +10,7 @@ from generator import BatchGenerator
 from utils.utils import normalize, evaluate, makedirs
 from keras.callbacks import EarlyStopping, ReduceLROnPlateau
 from keras.optimizers import Adam
+# from tensorflow.keras.optimizers import Adam
 from callbacks import CustomModelCheckpoint, CustomTensorBoard
 from utils.multi_gpu_model import multi_gpu_model
 import tensorflow as tf
@@ -258,8 +259,9 @@ def _main_(args):
     )
 
     # make a GPU version of infer_model for evaluation
-    if multi_gpu > 1:
+    if multi_gpu > 1:        
         infer_model = load_model(config['train']['saved_weights_name'])
+
 
     ###############################
     #   Run the evaluation
